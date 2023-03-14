@@ -24,7 +24,7 @@ plt.ylim(-1,100)
 plt.xlim(10,150000)
 
 plt.legend(markerscale=5, loc='upper right')
-plt.title('Time Complexity of node deletion in Binary Tree')
+plt.title('Time Complexity of node deletion in Binary Search Tree')
 plt.ticklabel_format(useMathText=True, axis='y')
 plt.tight_layout()
 plt.show()
