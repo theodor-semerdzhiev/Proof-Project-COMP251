@@ -13,6 +13,7 @@ class BinaryTree {
 
     //the root of the Binary Search Tree
     Node root;
+    long count=0;
     //creates a Binary Tree object with a  non-null root
     public BinaryTree(int key) {
         root = new Node(key);
@@ -134,6 +135,7 @@ class BinaryTree {
    Essentially this function iterates down tree in order to locate the proper position for the node we want to remove,
    it will then remove that node from the tree using the proper operations depending on the case
    */
+    //used to count the # of operations
     public Node deleteIterative(Node root, int key)
     {
         // Initialize current node and its parent
@@ -144,6 +146,7 @@ class BinaryTree {
             prev = curr;
             if (key < curr.key) curr = curr.left; // Move to the left subtree if key is less than current node's key
             else curr = curr.right; // Move to the right subtree if key is greater than or equal to current node's key
+            count++;
         }
         // If the node to be deleted is not found, return the original tree
         if (curr == null) return root;
@@ -169,6 +172,7 @@ class BinaryTree {
             while (temp.left != null) { // Traverse down the left subtree of the right child to find the minimum value
                 p = temp;
                 temp = temp.left;
+                count++;
             }
             if (p != null) p.left = temp.right; // Update the parent's left child if the minimum value node has a right child
             else curr.right = temp.right; // Update the current node's right child if the minimum value node has no left child

@@ -19,30 +19,30 @@ public class BinaryTreeRunTime {
             return;
         }
 
-
-        for(int j=0; j<5000; j++) {
+        //this will take a while
+        for(int j=0; j<10000; j++) {
 
             BinaryTree tree = new BinaryTree();
             ArrayList<Integer> arr1 = new ArrayList<>();
-            ArrayList<Integer> arr2 = new ArrayList<>();
-            for(int i=1; i < 10*j; i++){
+
+            for(int i=1; i < 10*j; i++) {
                 arr1.add(i);
-                arr2.add(i);
             }
 
+
             while(arr1.size()!= 0) tree.root = tree.add_iterative(tree.root, arr1.remove(rand.nextInt(arr1.size())));
+            tree.root=tree.add_iterative(tree.root, 0);
+            long operations;
+            tree.root= tree.deleteIterative(tree.root, 0);
+            operations=tree.count;
 
 
 
-            long startTime = System.nanoTime();
-            for(int i=0; i < arr2.size(); i++) tree.root= tree.deleteIterative(tree.root, arr2.get(i));
-            long endTime = System.nanoTime();
-
-            writer.println(endTime-startTime);
-            System.out.println("Runtime: "+ (endTime - startTime)+" ite: "+j);
+            writer.println(operations);
+            System.out.println("Operations: "+ operations+" ite: "+j);
             tree.root=tree.add_iterative(tree.root, 0);
 
-
+            tree.count=0;
 
         }
         writer.close();
