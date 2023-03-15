@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #loads cvs file and creates pair of x values m_data
+#MAKE SURE PATH FILE IS PROPER
 data = pd.read_csv('../HeapSort_out.csv')
 n_data = np.arange(1,9999)
 n_data = [x*100 for x in n_data]
