@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class HeapSortRunTime {
 
+    //this program might take a decent while to run depending on your computer
     public static void main(String args[]) {
 
         File out;

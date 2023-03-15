@@ -4,6 +4,7 @@ import pandas as pd
 
 
 #loads cvs file and creates pair of x values m_data
+#make sure file path is proper
 data = pd.read_csv('../BinTree_out.csv')
 n_data = np.arange(0,9999)
 n_data = [x*10 for x in n_data]
